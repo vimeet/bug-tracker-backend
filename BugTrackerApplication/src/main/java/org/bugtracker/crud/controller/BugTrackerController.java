@@ -38,19 +38,27 @@ public class BugTrackerController {
     }
 
     @PostMapping("/projects")
-    public Projects createProject(@Valid @RequestBody Projects projects) {
-        return projectRepository.save(projects);
+    public Projects createProject(@Valid @RequestBody Projects projects) throws ResourceNotFoundException {
+        try {
+            return projectRepository.save(projects);
+        } catch(Exception e) {
+            throw new ResourceNotFoundException("There are some errors while saving the request, please check the request!");
+        }
     }
 
     @PostMapping("/create-employee")
-    public People createEmployee(@Valid @RequestBody People employee) {
-        return peopleRepository.save(employee);
+    public People createEmployee(@Valid @RequestBody People employee) throws ResourceNotFoundException {
+        try {
+            return peopleRepository.save(employee);
+        } catch(Exception e) {
+            throw new ResourceNotFoundException("There are some errors while saving the request, please check the request!");
+        }
     }
 
     @GetMapping("/employee/{id}")
-    public ResponseEntity<People> getEmployeeById(@PathVariable(value = "id") int personId)
+    public ResponseEntity<People> getEmployeeById(@PathVariable(value = "id") long personId)
             throws ResourceNotFoundException {
-        People employee = peopleRepository.findById((long) personId).orElseThrow(() ->
+        People employee = peopleRepository.findById(personId).orElseThrow(() ->
                 new ResourceNotFoundException("Employee not found for id: " + personId));
         return ResponseEntity.ok().body(employee);
     }
@@ -71,7 +79,11 @@ public class BugTrackerController {
     @PostMapping("/issues")
     public Issue createIssue(@Valid @RequestBody Issue issue)
             throws ResourceNotFoundException {
-        return issueRepository.save(issue);
+        try {
+            return issueRepository.save(issue);
+        } catch(Exception e) {
+            throw new ResourceNotFoundException("There are some errors while saving the request, please check the request!");
+        }
     }
 
 }
