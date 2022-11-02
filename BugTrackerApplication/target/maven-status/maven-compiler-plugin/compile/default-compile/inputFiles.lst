@@ -1,0 +1,8 @@
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/controller/BugTrackerController.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/model/Projects.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/repositories/ProjectRepository.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/repositories/IssueRepository.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/model/People.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/repositories/PeopleRepository.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/crud/model/Issue.java
+/home/vimeet/IdeaProjects/bug-tracker-backend/BugTrackerApplication/src/main/java/org/bugtracker/Main.java
