@@ -7,6 +7,7 @@
     <groupId>org.bugtracker</groupId>
     <artifactId>BugTrackerApplication</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -54,6 +55,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
                 <version>2.7.5</version>
             </plugin>
         </plugins>
