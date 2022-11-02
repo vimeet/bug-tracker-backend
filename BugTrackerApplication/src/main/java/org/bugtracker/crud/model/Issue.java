@@ -57,7 +57,7 @@ public class Issue {
         this.targetResolutionDate = targetResolutionDate;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "related_project", referencedColumnName = "project_id")
     public Projects getRelatedProject() {
         return relatedProject;
@@ -76,7 +76,7 @@ public class Issue {
         this.actualResolutionDate = actualResolutionDate;
     }
 
-    @OneToOne(cascade =  CascadeType.ALL)
+    @OneToOne(cascade =  CascadeType.MERGE)
     @JoinColumn(name = "assigned_to", referencedColumnName = "person_id")
     public People getAssignedTo() {
         return assignedTo;
@@ -95,7 +95,7 @@ public class Issue {
         this.createdOn = createdOn;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "identified_by_person_id", referencedColumnName = "person_id")
     public People getIdentifiedByPersonId() {
         return identifiedByPersonId;
@@ -114,7 +114,7 @@ public class Issue {
         this.modifiedOn = modifiedOn;
     }
 
-    @Column(name = "identified_date")
+    @Column(name = "identified_date", nullable = false)
     public Date getIdentifiedDate() {
         return identifiedDate;
     }
@@ -132,7 +132,7 @@ public class Issue {
         this.modifiedBy = modifiedBy;
     }
 
-    @Column(name = "issue_summary")
+    @Column(name = "issue_summary", nullable = false)
     public String getIssueSummary() {
         return issueSummary;
     }
@@ -141,7 +141,7 @@ public class Issue {
         this.issueSummary = issueSummary;
     }
 
-    @Column(name = "issue_description")
+    @Column(name = "issue_description", nullable = false)
     public String getIssueDescription() {
         return issueDescription;
     }
@@ -150,7 +150,7 @@ public class Issue {
         this.issueDescription = issueDescription;
     }
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
     public String getStatus() {
         return status;
     }

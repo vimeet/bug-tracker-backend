@@ -32,9 +32,19 @@ public class BugTrackerController {
     @Autowired
     IssueRepository issueRepository;
 
-    @GetMapping("/projects/")
+    @GetMapping("/projects")
     public List<Projects> getProjects() {
         return projectRepository.findAll();
+    }
+
+    @PostMapping("/projects")
+    public Projects createProject(@Valid @RequestBody Projects projects) {
+        return projectRepository.save(projects);
+    }
+
+    @PostMapping("/create-employee")
+    public People createEmployee(@Valid @RequestBody People employee) {
+        return peopleRepository.save(employee);
     }
 
     @GetMapping("/employee/{id}")
@@ -45,17 +55,8 @@ public class BugTrackerController {
         return ResponseEntity.ok().body(employee);
     }
 
-    @PostMapping("/projects/")
-    public Projects createProject(@Valid @RequestBody Projects projects) {
-        return projectRepository.save(projects);
-    }
 
-    @PostMapping("/create-employee")
-    public People createEmployee(@Valid @RequestBody People employee) {
-        return peopleRepository.save(employee);
-    }
-
-    @GetMapping("/issues/")
+    @GetMapping("/issues")
     public List<Issue> getIssues() {
         return issueRepository.findAll();
     }
