@@ -38,9 +38,9 @@ public class BugTrackerController {
     }
 
     @GetMapping("/employee/{id}")
-    public ResponseEntity<People> getEmployeeById(@PathVariable(value = "person_id") Long personId)
+    public ResponseEntity<People> getEmployeeById(@PathVariable(value = "id") int personId)
             throws ResourceNotFoundException {
-        People employee = peopleRepository.findById(personId).orElseThrow(() ->
+        People employee = peopleRepository.findById((long) personId).orElseThrow(() ->
                 new ResourceNotFoundException("Employee not found for id: " + personId));
         return ResponseEntity.ok().body(employee);
     }
@@ -51,8 +51,8 @@ public class BugTrackerController {
     }
 
     @PostMapping("/create-employee")
-    public People createEmployee(@Valid @RequestBody People people) {
-        return peopleRepository.save(people);
+    public People createEmployee(@Valid @RequestBody People employee) {
+        return peopleRepository.save(employee);
     }
 
     @GetMapping("/issues/")
@@ -61,7 +61,7 @@ public class BugTrackerController {
     }
 
     @GetMapping("/issues/{id}")
-    public Issue getIssueById(@PathVariable(value = "issue_id") Long issueId) {
+    public Issue getIssueById(@PathVariable(value = "id") Long issueId) {
         Issue issueById = issueRepository.findById(issueId)
                 .orElseThrow(() -> new ResourceAccessException("Issue not found for this id: " + issueId));
         return issueById;

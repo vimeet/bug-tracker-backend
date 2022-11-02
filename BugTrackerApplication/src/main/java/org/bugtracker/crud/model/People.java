@@ -13,7 +13,7 @@ import java.sql.Date;
 public class People {
 
     private long personId;
-    private int assignedProject;
+    private long assignedProject;
     private Date createdOn;
     private Date modifiedOn;
     private String username;
@@ -22,6 +22,19 @@ public class People {
     private String personName;
     private String personEmail;
     private String personRole;
+
+    public People(long personId, long assignedProject, Date createdOn, Date modifiedOn, String username, String createdBy, String modifiedBy, String personName, String personEmail, String personRole) {
+        this.personId = personId;
+        this.assignedProject = assignedProject;
+        this.createdOn = createdOn;
+        this.modifiedOn = modifiedOn;
+        this.username = username;
+        this.createdBy = createdBy;
+        this.modifiedBy = modifiedBy;
+        this.personName = personName;
+        this.personEmail = personEmail;
+        this.personRole = personRole;
+    }
 
 
     @Id
@@ -36,15 +49,15 @@ public class People {
     }
 
     @Column(name = "assigned_project", nullable = false)
-    public int getAssignedProject() {
+    public long getAssignedProject() {
         return assignedProject;
     }
 
-    public void setAssignedProject(int assignedProject) {
+    public void setAssignedProject(long assignedProject) {
         this.assignedProject = assignedProject;
     }
 
-    @Column(name = "created_on")
+    @Column(name = "created_on", nullable = false)
     public Date getCreatedOn() {
         return createdOn;
     }
@@ -53,7 +66,7 @@ public class People {
         this.createdOn = createdOn;
     }
 
-    @Column(name = "modified_on")
+    @Column(name = "modified_on", nullable = false)
     public Date getModifiedOn() {
         return modifiedOn;
     }
@@ -62,7 +75,7 @@ public class People {
         this.modifiedOn = modifiedOn;
     }
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false)
     public String getUsername() {
         return username;
     }
@@ -71,7 +84,7 @@ public class People {
         this.username = username;
     }
 
-    @Column(name = "created_by")
+    @Column(name = "created_by", nullable = false)
     public String getCreatedBy() {
         return createdBy;
     }
@@ -80,7 +93,7 @@ public class People {
         this.createdBy = createdBy;
     }
 
-    @Column(name = "modified_by")
+    @Column(name = "modified_by", nullable = false)
     public String getModifiedBy() {
         return modifiedBy;
     }
@@ -89,7 +102,7 @@ public class People {
         this.modifiedBy = modifiedBy;
     }
 
-    @Column(name = "person_name")
+    @Column(name = "person_name", nullable = false)
     public String getPersonName() {
         return personName;
     }
@@ -98,7 +111,7 @@ public class People {
         this.personName = personName;
     }
 
-    @Column(name = "person_email")
+    @Column(name = "person_email", nullable = false)
     public String getPersonEmail() {
         return personEmail;
     }

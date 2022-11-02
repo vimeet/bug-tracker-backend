@@ -1,0 +1,3 @@
+*.class
+BugTrackerApplication/target/
+BugTrackerApplication/.idea/

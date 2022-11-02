@@ -1,8 +1,11 @@
-org/bugtracker/crud/repositories/ProjectRepository.class
 org/bugtracker/crud/model/Projects.class
 org/bugtracker/Main.class
 org/bugtracker/crud/repositories/IssueRepository.class
+org/bugtracker/crud/exception/ErrorDetails.class
+org/bugtracker/crud/repositories/PeopleRepository.class
+org/bugtracker/crud/exception/GlobalExceptionHandler.class
+org/bugtracker/crud/repositories/ProjectRepository.class
+org/bugtracker/crud/exception/ResourceNotFoundException.class
 org/bugtracker/crud/model/Issue.class
 org/bugtracker/crud/model/People.class
-org/bugtracker/crud/repositories/PeopleRepository.class
 org/bugtracker/crud/controller/BugTrackerController.class

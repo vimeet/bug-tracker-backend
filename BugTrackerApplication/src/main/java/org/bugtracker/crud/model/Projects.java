@@ -11,6 +11,18 @@ import java.sql.Date;
 @Entity
 @Table(name = "projects")
 public class Projects {
+    public Projects(long projectId, String projectName, String createdBy, Date createdOn, String modifiedBy, Date modifiedOn, Date actualEndDate, Date startDate, Date targetEndDate) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.createdBy = createdBy;
+        this.createdOn = createdOn;
+        this.modifiedBy = modifiedBy;
+        this.modifiedOn = modifiedOn;
+        this.actualEndDate = actualEndDate;
+        this.startDate = startDate;
+        this.targetEndDate = targetEndDate;
+    }
+
     private long projectId;
     private String projectName;
     private String createdBy;
