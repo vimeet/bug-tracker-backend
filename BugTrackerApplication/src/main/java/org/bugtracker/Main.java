@@ -18,6 +18,9 @@ import javax.persistence.Entity;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("changes");
         SpringApplication.run(Main.class, args);
+
     }
 }
